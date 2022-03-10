@@ -29,9 +29,21 @@ const reportPost = (id) => {
 };
 
 const displayContent = (text) => {
-  console.log(text.length)
+  // console.log(text.length)
     return text.length < 30 ? text : text.slice(0,30)+"<span class='fw-bold'>...read more</span>"+console.log(text.slice(0, 30).length);
 };
+
+const commentOfUserName = (post) => {
+  for(const item of post){
+    return item.user;
+  }
+
+}
+const commentOfUserText = (post) => {
+  for(const item of post){
+    return item.text;
+  }
+}
 
 const switchTab = (id) => {
     if (id === "posts") {
@@ -55,16 +67,10 @@ const switchTab = (id) => {
 
 const createPost = (post) => {
   console.log(post)
-  // console.log(post.userImage)
   const userImg = post.userImage;
     const image = post.image;
-    // console.log(image)
     const div = document.createElement( "article" );
     div.classList.add( "post" );
-
-
-
-
     div.innerHTML = `
               <div class="post__header">
                 <div class="post__profile">
@@ -132,9 +138,11 @@ const createPost = (post) => {
                   <div class="post__description">
                     <small>
                       <a class="post__name--underline" href="#">
-                          ${post.comments?.user}
+                       
+                     
+                          ${commentOfUserName(post.comments)}
                       </a>
-                      ${post.comments?.text}
+                      ${commentOfUserText(post.comments)}
                     </small>
                   </div>
                   <span class="post__date-time">30 minutes ago</span>
