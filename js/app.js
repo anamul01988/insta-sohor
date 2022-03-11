@@ -55,11 +55,13 @@ const commentOfUserText = (post) => {
 }
 
 const switchTab = (id) => {
+  document.getElementById('bonus-content').style.display = 'none';
   console.log(id)
     if (id === "posts") {
         document.getElementById( "posts" ).style.display = "grid";
         document.getElementById( "liked" ).style.display = "none";
         document.getElementById( "reported" ).style.display = "none";
+        document.getElementById('bonus-content').style.display = 'block';
     } else if (id === "liked") {
         document.getElementById( "liked" ).style.display = "block";
         document.getElementById( "posts" ).style.display = "none";
