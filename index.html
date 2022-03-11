@@ -77,7 +77,55 @@
                 <h1>Reported posts</h1>
             </div>
         </main>
-        <footer></footer>
+
+        <section id="bonus-content" class="container">
+            <div class="card mb-4">
+                <div class="card-header">
+                    What does event loop do in javascript?
+                </div>
+                <div class="card-body">
+                  <p class="card-text">Mainly javascript is a single threaded programming language. It can't run code parallely at a time while it's work on single line manner at a time. Consdering the browser as chrome that has v8 engine and this engine convert the code into machine code. v8 engine contain heap and call stack. 
+                      Heap work for memory management that is unstructured memory block and call stack is used  for store function that we work on. Stack follows LIFO structure that is last in first out. By the global execution context, initilly main() is call in call stack. Then consecutively all functon will move to the call stack and execute.During execution they  will exit that has done in the stack.
+                    If we put setTimeout(position, time) that is asynchronous, In javascript, it also send this function to call stack. But call stack will pop asynchronos function immediately to the third party as assistant like Web Api for Browser. Then asynchronos function will execute on web Api. For node js, we should consider C++ Api.
+                    During Execution of asynchronos functon base on time , call stack can move forward sothat it execute synchronous function. After finishing the timer of setTimeout() asynchronos functon , web api inform the another assistant that is called Callback Queue and async function is sent to the Callback Queue.
+                    Callback Queue follows FIFO structure that means first in first out. It will store all the asynchronos function one after another. Then Event communicates between call stck and callback Queue. From callBack Queue first async functon will be transfered to the Call stack by event loop following FIFO structure.
+
+                  </p>
+            
+                </div>
+              </div>
+           
+
+            <div class="card text-white bg-secondary mb-3" >
+                <div class="card-header">Difference between local storage and session storage?</div>
+                <div class="card-body">
+                  <h5 class="card-title">Local storage:</h5>
+                  <p class="card-text">
+                    <ol>
+                        <li>Data can be  stored after closing the browser or window. </li>
+                        <li>The capacity of local storage is 5MB/10MB.</li>
+                        <li>It allows storing data with no expiration date.</li>
+                        <li>Data is transferred to the server for every http reques.</li>
+                    </ol>
+                  </p>
+                </div>
+                <div class="card-body">
+                  <h5 class="card-title">Session storage:</h5>
+                  <p class="card-text">
+                    <ol>
+                        <li>Data can't be store after closing the browser or window. Cause it works on per window or tab</li>
+                        <li>The capacity of session storgae is 5 MB.</li>
+                        <li>It allows storing data for one session only.</li>
+                        <li>Data is not transferred to the server.</li>
+                    </ol>
+                  </p>
+                </div>
+            </div>
+        </section>
+      
+        <footer>
+           
+        </footer>
 
         <!-- add javascript  file  -->
         <script src="./js/app.js"></script>
